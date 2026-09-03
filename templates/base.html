@@ -1,0 +1,18 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Aldomar Assolin: soldagem, caldeiraria e mecanização.">
+  <title>{% block title %}Manex | Soldagem e Caldeiraria{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="container"><a class="marca" href="{% url 'portfolio:inicio' %}">MANEX<span>.</span></a></header>
+  <main id="conteudo" class="container">{% block content %}{% endblock %}</main>
+  <footer class="container">Aldomar Assolin · Portfólio industrial</footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
