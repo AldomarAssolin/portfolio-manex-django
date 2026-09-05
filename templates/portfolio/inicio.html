@@ -1,12 +1,35 @@
 {% extends "base.html" %}
+
 {% block content %}
 <section class="apresentacao" aria-labelledby="nome">
-  <p class="destaque">SOLDAGEM · CALDEIRARIA · MECANIZAÇÃO</p>
-  <h1 id="nome">{{ nome }}</h1>
-  <h2>{{ titulo }}</h2>
-  <p>{{ subtitulo }}</p>
-  <p class="resumo">Mais de 15 anos de experiência na indústria metal-mecânica,
-    conectando execução prática, formação técnica e atenção à qualidade.</p>
-  <a class="botao" href="https://www.linkedin.com/in/aldomarassolin">Conheça minha trajetória no LinkedIn</a>
+  {% if perfil %}
+    <p class="destaque">SOLDAGEM · CALDEIRARIA · MECANIZAÇÃO</p>
+
+    <h1 id="nome">{{ perfil.nome }}</h1>
+    <h2>{{ perfil.titulo }}</h2>
+
+    {% if perfil.subtitulo %}
+      <p class="subtitulo">{{ perfil.subtitulo }}</p>
+    {% endif %}
+
+    <p class="resumo">{{ perfil.resumo|linebreaksbr }}</p>
+
+    {% if perfil.linkedin %}
+      <a class="botao" href="{{ perfil.linkedin }}">
+        Conheça minha trajetória no LinkedIn
+      </a>
+    {% endif %}
+
+    {% if perfil.email %}
+      <p>
+        <a class="botao" href="mailto:{{ perfil.email }}">
+          Entre em contato por e-mail
+        </a>
+      </p>
+    {% endif %}
+  {% else %}
+    <h1 id="nome">Portfólio profissional</h1>
+    <p class="resumo">Apresentação em preparação.</p>
+  {% endif %}
 </section>
 {% endblock %}

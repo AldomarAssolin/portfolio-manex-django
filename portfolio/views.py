@@ -1,10 +1,14 @@
 from django.shortcuts import render
 
+from .models import Perfil
+
 
 def inicio(request):
-    """Primeiro fluxo URL -> view -> template; dados estáticos nesta etapa."""
-    return render(request, "portfolio/inicio.html", {
-        "nome": "Aldomar Assolin",
-        "titulo": "Soldador e Técnico em Soldagem",
-        "subtitulo": "Experiência prática, qualidade e evolução contínua."
-    })
+    """Exibe a apresentação com os dados do perfil cadastrado."""
+    perfil = Perfil.objects.filter(pk=1).first()
+
+    return render(
+        request,
+        "portfolio/inicio.html",
+        {"perfil": perfil},
+    )
