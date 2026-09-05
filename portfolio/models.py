@@ -57,3 +57,37 @@ class Trabalho(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class ImagemTrabalho(models.Model):
+    """Representa uma imagem de um trabalho do portfolio."""
+
+    trabalho = models.ForeignKey(
+        Trabalho,
+        on_delete=models.CASCADE,
+        related_name="imagens",
+        verbose_name="trabalho",
+    )
+    imagem = models.ImageField(
+        "imagem",
+        upload_to="trabalhos/%Y/%m/",
+        max_length=255,
+        )
+    legenda = models.CharField(
+        "legenda",
+        max_length=250,
+        blank=True,
+    )
+    texto_alternativo = models.CharField(
+        "texto alternativo",
+        max_length=250,
+        help_text="Descreva o que aparece na imagem para quem não pode ve-la.",
+    )
+    ordem = models.PositiveIntegerField("ordem", default=0)
+
+    class Meta:
+        verbose_name = "imagem de trabalho"
+        verbose_name_plural = "imagens de trabalhos"
+        ordering = ["ordem", "id"]
+
+    def __str__(self):
+        return f"Foto {self.ordem} - {self.trabalho}"
