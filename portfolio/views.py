@@ -6,4 +6,5 @@ def inicio(request):
     return render(request, "portfolio/inicio.html", {
         "nome": "Aldomar Assolin",
         "titulo": "Soldador e Técnico em Soldagem",
+        "subtitulo": "Experiência prática, qualidade e evolução contínua."
     })
