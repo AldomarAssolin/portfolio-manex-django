@@ -6,7 +6,7 @@ O projeto também funciona como aplicação prática de aprendizado em Django, i
 
 ## Estado atual
 
-Aplicação em desenvolvimento local, com funcionalidades implementadas até a PM-005.
+Aplicação em desenvolvimento local, com funcionalidades implementadas até a PM-006.
 
 ### Funcionalidades disponíveis
 
@@ -19,16 +19,14 @@ Aplicação em desenvolvimento local, com funcionalidades implementadas até a P
 * Várias imagens vinculadas a cada trabalho.
 * Legenda opcional, texto alternativo obrigatório e ordenação das imagens.
 * Upload com validação de tamanho, conteúdo e formato pelo formulário administrativo.
+* Exibição dos trabalhos publicados, galeria responsiva, legendas, texto alternativo e ordenação.
 
 ### Próximas entregas
 
-* **PM-006:** exibir trabalhos publicados e suas imagens na página inicial.
 * **PM-007:** implementar carrosséis acessíveis.
 * **PM-008:** complementar competências, formação e apresentação dos contatos.
 * **PM-009:** revisar a aplicação e validar a jornada completa.
 * **PM-010:** preparar e publicar o ambiente de produção.
-
-Atualmente, os trabalhos e suas imagens são gerenciados pelo Admin. O campo `publicado` armazena a decisão de publicação; seu uso na consulta da página pública será implementado na PM-006.
 
 A versão Django ainda não foi publicada. O portfólio existente no Sites permanece independente deste desenvolvimento.
 
