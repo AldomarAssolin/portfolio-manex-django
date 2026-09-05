@@ -27,3 +27,33 @@ class Perfil(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Trabalho(models.Model):
+    """Representa umtrabalho do portfolio."""
+
+    class Categoria(models.TextChoices):
+        """Categorias de trabalhos do portfolio"""
+        TUBULACAO_TIG = "tubulacao_tig", "Tubulação - TIG"
+        CALDEIRARIA_FCAW = "caldeiraria_fcaw", "Caldeiraria - FCAW"
+        SOLDAGEM_MECANIZADA = (
+            "soldagem_mecanizada",
+            "Soldagem - FCAW",
+        )
+
+    titulo = models.CharField("titulo", max_length=150)
+    descricao = models.TextField("descricao")
+    categoria = models.CharField(
+        "categoria",
+        max_length=50,
+        choices=Categoria.choices,
+    )
+    publicado = models.BooleanField("publicado", default=False)
+    ordem = models.PositiveIntegerField("ordem", default=0)
+
+    class Meta:
+        verbose_name = "trabalho"
+        verbose_name_plural = "trabalhos"
+        ordering = ["ordem", "id"]
+
+    def __str__(self):
+        return self.titulo
