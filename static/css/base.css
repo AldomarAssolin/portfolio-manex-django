@@ -16,3 +16,60 @@ h2 { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 500; }
 footer { padding-block: 28px; border-top: 1px solid #3b414b; color: #c9cdd5; }
 .pular { position: absolute; top: -100px; left: 16px; padding: 10px; background: #181b20; }
 .pular:focus { top: 10px; }
+.trabalhos {
+  padding-bottom: 64px;
+}
+
+.trabalho {
+  padding-block: 32px;
+  border-top: 1px solid #3b414b;
+}
+
+.trabalho h3 {
+  margin-block: 12px;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.trabalho-descricao {
+  max-width: 75ch;
+  color: #c9cdd5;
+  overflow-wrap: anywhere;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.galeria-item {
+  min-width: 0;
+  margin: 0;
+}
+
+.galeria-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #101216;
+  border-radius: 8px;
+}
+
+.galeria-item figcaption {
+  margin-top: 8px;
+  color: #c9cdd5;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.mensagem-vazia {
+  color: #c9cdd5;
+}
+
+@media (max-width: 640px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+}

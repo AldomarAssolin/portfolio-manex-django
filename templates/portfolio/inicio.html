@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<!-- Seção de apresentação -->
 <section class="apresentacao" aria-labelledby="nome">
   {% if perfil %}
     <p class="destaque">SOLDAGEM · CALDEIRARIA · MECANIZAÇÃO</p>
@@ -31,5 +33,56 @@
     <h1 id="nome">Portfólio profissional</h1>
     <p class="resumo">Apresentação em preparação.</p>
   {% endif %}
+</section>
+
+<!-- Seção de trabalhos -->
+<section class="trabalhos" aria-labelledby="titulo-trabalhos">
+  <h2 id="titulo-trabalhos">Trabalhos realizados</h2>
+
+  {% for trabalho in trabalhos %}
+    <article
+      class="trabalho"
+      aria-labelledby="trabalho-{{ trabalho.pk }}"
+    >
+      <p class="destaque">
+        {{ trabalho.get_categoria_display }}
+      </p>
+
+      <h3 id="trabalho-{{ trabalho.pk }}">
+        {{ trabalho.titulo }}
+      </h3>
+
+      <div class="trabalho-descricao">
+        {{ trabalho.descricao|linebreaks }}
+      </div>
+
+      <div class="galeria">
+        {% for foto in trabalho.imagens.all %}
+          {% if foto.imagem %}
+            <figure class="galeria-item">
+              <img
+                src="{{ foto.imagem.url }}"
+                alt="{{ foto.texto_alternativo }}"
+                loading="lazy"
+                decoding="async"
+              >
+
+              {% if foto.legenda %}
+                <figcaption>{{ foto.legenda }}</figcaption>
+              {% endif %}
+            </figure>
+          {% endif %}
+        {% empty %}
+          <p class="mensagem-vazia">
+            Fotografias em preparação.
+          </p>
+        {% endfor %}
+      </div>
+    </article>
+  {% empty %}
+    <p class="mensagem-vazia">
+      Novos trabalhos serão apresentados em breve.
+    </p>
+  {% endfor %}
 </section>
 {% endblock %}
