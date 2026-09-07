@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -56,7 +57,7 @@
         {{ trabalho.descricao|linebreaks }}
       </div>
 
-      <div class="galeria">
+      <div class="galeria" data-carrossel aria-labelledby="trabalho-{{ trabalho.pk }}">
         {% for foto in trabalho.imagens.all %}
           {% if foto.imagem %}
             <figure class="galeria-item">
@@ -85,4 +86,8 @@
     </p>
   {% endfor %}
 </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'js/carrosseis.js' %}" defer></script>
 {% endblock %}

@@ -6,7 +6,7 @@ O projeto também funciona como aplicação prática de aprendizado em Django, i
 
 ## Estado atual
 
-Aplicação em desenvolvimento local, com funcionalidades implementadas até a PM-006.
+Aplicação em desenvolvimento local, com funcionalidades implementadas até a PM-007.
 
 ### Funcionalidades disponíveis
 
@@ -20,10 +20,12 @@ Aplicação em desenvolvimento local, com funcionalidades implementadas até a P
 * Legenda opcional, texto alternativo obrigatório e ordenação das imagens.
 * Upload com validação de tamanho, conteúdo e formato pelo formulário administrativo.
 * Exibição dos trabalhos publicados, galeria responsiva, legendas, texto alternativo e ordenação.
+* Carrossel independente por trabalho: anterior/próxima, contador, miniaturas, teclado e gesto horizontal.
+* Galeria completa quando o JavaScript está desativado; zero ou uma foto não exibem controles desnecessários.
+* Botões com nomes acessíveis e foco visível, sem reprodução automática ou animações.
 
 ### Próximas entregas
 
-* **PM-007:** implementar carrosséis acessíveis.
 * **PM-008:** complementar competências, formação e apresentação dos contatos.
 * **PM-009:** revisar a aplicação e validar a jornada completa.
 * **PM-010:** preparar e publicar o ambiente de produção.
@@ -36,6 +38,7 @@ A versão Django ainda não foi publicada. O portfólio existente no Sites perma
 * Django 5.2.
 * SQLite no desenvolvimento.
 * Templates Django, HTML e CSS.
+* JavaScript nativo para os carrosséis, sem etapa de build.
 * Pillow para processamento e validação de imagens.
 * Django Admin para gerenciamento do conteúdo.
 * Git e GitHub para versionamento e revisão.
@@ -180,7 +183,7 @@ python manage.py showmigrations portfolio
 git diff --check
 ```
 
-### Cobertura registrada até a PM-005
+### Cobertura e validação
 
 * Teste automatizado da página inicial sem perfil cadastrado.
 * Cadastro e edição de perfil verificados manualmente.
@@ -191,7 +194,11 @@ git diff --check
 * Rejeição de arquivo inválido e imagem acima do limite verificada.
 * Edição de legenda sem novo upload verificada.
 
-Essas verificações não representam cobertura automatizada completa. Os testes de visibilidade dos trabalhos publicados serão acrescentados durante a integração pública.
+Os cinco testes Django também cobrem a integração pública: exclusão de rascunhos e suas imagens, ordenação, trabalho sem fotografias e ausência de trabalhos publicados.
+
+A PM-007 acrescenta sete testes de DOM para o JavaScript, executados separadamente e sem dependências adicionais na aplicação Django. Consulte [Carrosséis: funcionamento e validação](docs/pm-007-carrosseis.md) para os comandos e o roteiro manual.
+
+Os testes de DOM não verificam renderização, comportamento físico de toque ou leitores de tela. Essa revisão permanece pendente na validação integrada; a tentativa de acessar o servidor local pelo navegador de revisão foi bloqueada pelo ambiente.
 
 ## Configuração
 
@@ -228,6 +235,7 @@ A faixa `Django>=5.2,<5.3` mantém o projeto na série 5.2 e permite atualizaç�
 * [Fluxo de Git](docs/05-fluxo-git.md)
 * [Progresso e retomada](docs/06-progresso.md)
 * [Validação da fundação](docs/07-validacao.md)
+* [Carrosséis: funcionamento e validação](docs/pm-007-carrosseis.md)
 
 Os documentos produzidos na fundação podem conter descrições históricas. Sua atualização deve acompanhar a evolução das tarefas.
 
