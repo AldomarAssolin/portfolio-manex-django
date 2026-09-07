@@ -1,16 +1,16 @@
 # Backlog de implementação
 
-As tarefas são sequenciais, com duração apenas estimada. PM-001 foi preparada aqui; a validação no computador de Manex permanece pendente. As demais tarefas estão planejadas, não implementadas.
+As tarefas têm duração apenas estimada. PM-001 a PM-006 foram integradas; PM-007 está implementada, com limitações de validação registradas no seu guia. As issues do GitHub detalham as próximas entregas.
 
 | ID | Entrega | Dependência | Estimativa | Estado |
 | --- | --- | --- | --- | --- |
-| PM-001 | Fundação e execução local | — | 1 sessão | Base entregue; execução do aluno pendente |
-| PM-002 | Apresentação via contexto | PM-001 | 1 sessão | Próxima |
-| PM-003 | Perfil profissional no banco e Admin | PM-002 | 2 sessões | Planejada |
-| PM-004 | Trabalhos e publicação | PM-003 | 2 sessões | Planejada |
-| PM-005 | Fotografias e ordenação | PM-004 | 2–3 sessões | Planejada |
-| PM-006 | Página alimentada pelo banco | PM-005 | 2 sessões | Planejada |
-| PM-007 | Carrosséis acessíveis | PM-006 | 2–3 sessões | Planejada |
+| PM-001 | Fundação e execução local | — | 1 sessão | Integrada |
+| PM-002 | Apresentação via contexto | PM-001 | 1 sessão | Integrada |
+| PM-003 | Perfil profissional no banco e Admin | PM-002 | 2 sessões | Integrada |
+| PM-004 | Trabalhos e publicação | PM-003 | 2 sessões | Integrada |
+| PM-005 | Fotografias e ordenação | PM-004 | 2–3 sessões | Integrada |
+| PM-006 | Página alimentada pelo banco | PM-005 | 2 sessões | Integrada |
+| PM-007 | Carrosséis acessíveis | PM-006 | 2–3 sessões | Implementada; revisão visual pendente |
 | PM-008 | Competências, formação e contatos | PM-006 | 2 sessões | Planejada |
 | PM-009 | Revisão integrada da V1 | PM-007, PM-008 | 1–2 sessões | Planejada |
 | PM-010 | Preparação de produção e publicação | PM-009 | A definir com hospedagem | Planejada |
@@ -66,6 +66,7 @@ Objetivo: JavaScript progressivo em cima do HTML gerado.
 Botões anterior/próximo, contador, miniaturas, teclado e gesto no celular.
 Aceite: três galerias funcionam independentemente; botões acessíveis; foco visível; 0/1/múltiplas fotos tratados; sem autoplay; conteúdo continua acessível sem JS.
 Verificação manual com teclado, janela estreita e dispositivo móvel quando disponível.
+Implementação, testes de DOM e limitações: [guia da PM-007](pm-007-carrosseis.md).
 
 ## PM-008 — Conteúdo complementar
 
